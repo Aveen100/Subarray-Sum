@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>  
+    <div id="sum"></div>
+
+<script>
+
+
+ let CurrentSum=0;
+ let MaximumSum=0;
+let arr=[];
+//Taking array size from the user
+let size= prompt("Enter array size");
+
+//Function to findout the subarray
+function MaxSum(arr){
+for(let i=0;i<size;i++){
+    CurrentSum+=arr[i];
+//If Current is greater Put the value of current sum in maximum sum 
+    if(CurrentSum>=MaximumSum)
+    MaximumSum=CurrentSum;
+//set Value of Current sum 0 if it is in negative
+    if(CurrentSum<0)
+    CurrentSum=0;
+   
+}
+return MaximumSum;
+}
+
+//Loop for  getting the elements of the array from the user
+for(let j=0; j<size; j++) 
+{
+//ParseInt is converting the type of array to Integers
+    arr[j] = parseInt(prompt('Enter array Element ' + (j+1)));
+}
+
+//Displaying the Maximum Subarray
+document.getElementById("sum").innerHTML="Maximum sum is " +MaxSum(arr);
+
+ </script>
+    
+</body>
+</html>
